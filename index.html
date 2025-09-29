@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Educativa - Inicio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <main id="agrupar">
+        <header>
+            <h1 class="animate-title">Mi Página Educativa</h1>
+            <h2>Aprende y Explora</h2>
+            <button onclick="mostrarMensaje('Comencemos a aprender!')">Inicimos</button>
+            <script src="./codigo.js"></script>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#inicio" data-tooltip="Bienvenida a nuestra página educativa">Inicio</a></li>
+                <li><a href="#noticias" data-tooltip="Últimas novedades educativas">Noticias</a></li>
+                <li><a href="#galeria" data-tooltip="Galería de recursos visuales">Galería</a></li>
+                <li><a href="#contactos" data-tooltip="Contáctanos para más información">Contactos</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+        </nav>
+        <section id="main-content">
+            <article id="content-area">
+                <h1>Bienvenidos</h1>
+                <p>Esta es una página educativa para aprender sobre diversos temas. Selecciona una sección en el menú para explorar.</p>
+            </article>
+        </section>
+        <aside>
+            <h3>Recursos Adicionales</h3>
+            <p>Encuentra enlaces y materiales educativos en esta sección.</p>
+        </aside>
+        <footer>
+            Pie de página - © 2025 Mi Página Educativa
+        </footer>
+    </main>
+    <script src="codigo.js"></script>
+</body>
+</html>

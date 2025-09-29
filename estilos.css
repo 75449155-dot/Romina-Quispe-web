@@ -1,0 +1,218 @@
+
+:root {
+    --color-fondo: #87a9d5db;
+    --color-texto-h1: #405b77;
+    --color-texto-h2: #5241b4;
+    --color-sombra: #969696;
+    --color-borde: #030303;
+    --color-nav: #b495e6d8;
+    --color-nav-item: #f5f5dc;
+    --color-section: #f3f3f3;
+    --color-aside: #f5f5dc;
+    --color-footer: #faebd7;
+    /* Modo oscuro */
+    --color-fondo-dark: #333;
+    --color-texto-dark: #f0f0f0;
+    --color-section-dark: #444;
+    --color-aside-dark: #555;
+    --color-footer-dark: #666;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    text-align: center;
+    font-family: 'Verdana', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: var(--color-fondo-dark);
+    color: var(--color-texto-dark);
+}
+
+h1 {
+    color: var(--color-texto-h1);
+    font: bold 60px 'MiNuevaFuente', sans-serif;
+    text-shadow: 5px 5px var(--color-sombra);
+    transition: transform 1s ease-in-out 0.5s;
+}
+
+h1:hover {
+    transform: scale(1.2);
+}
+
+h2, h3 {
+    color: var(--color-texto-h2);
+}
+
+.animate-title {
+    animation: slideIn 1s ease-out;
+}
+
+#agrupar {
+    max-width: 1400px;
+    margin: 15px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    background-color: azure;
+    background-image: url('professional-background-4myolhhxiwna65b5.jpg');
+    background-size: cover;
+    padding: 40px;
+    border: 10px solid var(--color-borde);
+    border-radius: 10px;
+}
+
+nav {
+    background-color: var(--color-nav);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav li {
+    background-color: var(--color-nav-item);
+    padding: 8px 15px;
+    font: bold 14px 'Verdana', sans-serif;
+    border-radius: 5px;
+    position: relative;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+nav li a:hover {
+    color: var(--color-texto-h1);
+}
+
+nav li a[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+section {
+    background: linear-gradient(to bottom, #ffffff, #006699);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: -20px -20px 10px var(--color-sombra);
+    min-height: 300px;
+}
+
+body.dark-mode section {
+    background: linear-gradient(to bottom, #444, #222);
+}
+
+section article {
+    animation: fadeIn 0.5s ease-in;
+}
+
+aside {
+    background-color: var(--color-aside);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body.dark-mode aside {
+    background-color: var(--color-aside-dark);
+}
+
+footer {
+    background-color: var(--color-footer);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body.dark-mode footer {
+    background-color: var(--color-footer-dark);
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fuente personalizada */
+@font-face {
+    font-family: 'MiNuevaFuente';
+    src: url('fuente/DynaPuff-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    #agrupar {
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    section, aside {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
